@@ -1,0 +1,12 @@
+torchvision>=0.5.0
+pretrainedmodels==0.7.4
+efficientnet-pytorch==0.7.1
+timm==0.6.12
+tqdm
+pillow
+pytorch_lightning==1.9.4
+matplotlib
+segmentation-models-pytorch
+notebook
+albumentations
+seaborn

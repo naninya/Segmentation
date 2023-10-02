@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  smp:
+    build:
+      context: ./docker_files
+      dockerfile: Dockerfile_smp
+    image: smp
+    container_name: smp
+    ports:
+      - "8022:8022"
+    volumes:
+      - ./notebook:/smp/notebook
+      - ./data:/smp/data
+      - ./src:/smp/src
+      - ./results:/smp/results
+      - ./models:/smp/models
+    command: jupyter notebook --port=8022 --ip=0.0.0.0 --NotebookApp.token='' --allow-root 
+    # tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [utility, compute, video]
+  via:
+    build:
+      context: ./docker_files
+      dockerfile: Dockerfile_via
+    ports:
+      - "8021:80"

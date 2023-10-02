@@ -1,0 +1,6 @@
+FROM nginx:1.19.2-alpine
+RUN apk update && \
+    apk add git
+RUN git clone https://gitlab.com/vgg/via.git
+RUN mv via/via-2.x.y/src/* /usr/share/nginx/html
+RUN ls /usr/share/nginx/html    
