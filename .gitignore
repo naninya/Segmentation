@@ -163,6 +163,10 @@ cython_debug/
 lightning_logs/
 results/
 models/
-data/
+data/bottle/
+data/grid/
+data/zipper/
+data/mvtec_original/
+data/*.tar.xz
 .DS_Store
 *_fortest.ipynb
